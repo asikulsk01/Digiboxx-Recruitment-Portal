@@ -44,6 +44,7 @@ public class AdminViewLinkFwd extends HttpServlet{
 								+ "<tr><td class='blue'>Email :</td><td>"+rs.getLong("mailid")+" RS</td></tr>"
 								+ "</table>"
 								+ "</div>");
+					
 					}
 					else {
 						RequestDispatcher rd = req.getRequestDispatcher("AdminSearchTrains.html");

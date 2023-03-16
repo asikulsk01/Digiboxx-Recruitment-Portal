@@ -30,7 +30,7 @@ public class ChangeUserPwd extends HttpServlet{
 						Connection con = DBConnection.getCon();
 						PreparedStatement ps = con.prepareStatement("update register set pword=? where uname=? and pword=?");
 						ps.setString(1, newPWord);
-						ps.setString(2,uName);
+						ps.setString(2, uName);
 						ps.setString(3, pWord);
 						int k= ps.executeUpdate();
 						if(k==1) {
@@ -50,7 +50,7 @@ public class ChangeUserPwd extends HttpServlet{
 							rd.include(req, res);
 							pw.println("<div class='tab'>" + 
 									"		<p1 class='menu'>" + 
-									"	Hello "+uName+" ! Welcome to our new TIMRS Website" + 
+									"	Hello "+uName+" ! Welcome to Recruters Portal" + 
 									"		</p1>" + 
 									"	</div>");
 							pw.println("<div class='main'><p1 class='menu'><a href='viewuserprofile'>view Profile</a></p1>"

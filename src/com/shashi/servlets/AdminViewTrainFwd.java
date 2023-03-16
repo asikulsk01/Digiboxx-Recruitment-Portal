@@ -24,34 +24,11 @@ public class AdminViewTrainFwd extends HttpServlet{
 						RequestDispatcher rd = req.getRequestDispatcher("ViewTrains.html");
 						rd.include(req, res);
 						pw.println("<div class='main'><p1 class='menu'>Candidates List	</p1></div>");
-						pw.println("<div class='tab'><table><th>Username</th><th>First name</th><th>Last name</th>"
-								+ "<th>Age</th><th>Phone no</th><th>Email</th>");
-						//System.out.println("Testing... ");
-						String uname;
-						String fName;
-						String lName;
-						String age;
-						String phone;
-						String email;
-						do {
-							 uname = rs.getString("UNAME");
-							 fName = rs.getString("FNAME");
-							 lName = rs.getString("LNAME");
-							 age = rs.getString("ADDR");
-							 phone = rs.getString("PNO");
-							 email = rs.getString("MAINID");
-							 //System.out.println("Testing... ");
-							 System.out.println(fName);
-								pw.println(""
-								+ "<tr> "
-								+ "<td><a href='viewadmin?trainNo="+uname+"'>"+uname+"</a></td>"
-								+ "<td>"+fName+"</td>"
-								+ "<td>"+lName+"</td>"
-								+ "<td>"+age+"</td>"
-								+ "<td>"+phone+"</td>"
-								+ "<td>"+email+" RS</td></tr>");
-							}while(rs.next());
-						pw.println("</table></div>");
+						
+						//List of candidates
+						RequestDispatcher rd1 = req.getRequestDispatcher("ShowTab.jsp");
+						rd1.include(req, res);
+						
 					}
 					else {
 						RequestDispatcher rd = req.getRequestDispatcher("ViewTrains.html");
